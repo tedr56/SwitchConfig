@@ -1,0 +1,36 @@
+- name: Initialisation des switches
+  hosts: switches
+  tasks:
+    - name: Vérifier le prompt initial
+      switch_interact:
+        port: "{{ port }}"
+        command: ""
+        baudrate: "{{ baudrate }}"
+        brand: "{{ brand }}"
+        target_mode: "EXEC privileged"
+        wait_timeout: "{{ wait_timeout }}"
+      register: iniltial_prompt
+
+    - name: Configurer le switch
+      switch_interact:
+        port: "{{ port }}"
+        command: "configure terminal"
+        baudrate: "{{ baudrate }}"
+        brand: "{{ brand }}"
+        target_mode: "Configuration"
+        wait_timeout: "{{ wait_timeout }}"
+
+- name: Vérifier la configuration des switches
+  hosts: switches
+  tasks:
+    - name: Afficher la configuration courante
+      switch_interact:
+        port: "{{ port }}"
+        command: "show running-config"
+        baudrate: "{{ baudrate }}"
+        brand: "{{ brand }}"
+        target_mode: "EXEC privileged"
+      register: config_output
+
+    - debug:
+        var: config_output.output
