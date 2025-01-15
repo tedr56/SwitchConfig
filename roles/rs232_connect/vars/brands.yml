@@ -1,0 +1,69 @@
+Hp:
+  "Switch ProCurve 29.*": # Regex pour matcher les 2900, 2910, 2920, etc.
+    default_prompt: ">"
+    enable_command: "enable" # Commande complète
+    enable_password: false # Pas de mot de passe par défaut
+    enable_prompt: "#"
+    configuration_command: "configure terminal" # Commande complète
+    configuration_password: false # Pas de mot de passe par défaut en configuration
+    configuration_prompt: "\(config\)#" # Prompt plus précis
+    low_level_keys: "\x03" # Ctrl+C
+    low_level_prompt: "Loader>" # Prompt plus précis
+
+Cisco:
+  "Switch 29.*": # Regex pour les 2950, 2960, etc.
+    default_prompt: ">"
+    enable_command: "enable"
+    enable_password: false
+    enable_prompt: "#"
+    configuration_command: "configure terminal"
+    configuration_password: false
+    configuration_prompt: "\(config\)#"
+    low_level_keys: "\x08" # Backspace (peut varier selon le modèle)
+    low_level_prompt: "rommon.*" # Regex pour les différentes versions de rommon
+
+  "Switch 6[0-9]{3}": # Regex pour les 6000, 6500, etc.
+    default_prompt: ">"
+    enable_command: "enable"
+    enable_password: false
+    enable_prompt: "#"
+    configuration_command: "configure terminal"
+    configuration_password: false
+    configuration_prompt: "\(config\)#"
+    low_level_keys: "\x08" # Backspace (peut varier selon le modèle)
+    low_level_prompt: "rommon.*"
+
+  "Catalyst 92.*": # Regex pour les Catalyst 9200, 9200L, etc.
+    default_prompt: ">"
+    enable_command: "enable"
+    enable_password: false
+    enable_prompt: "#"
+    configuration_command: "configure terminal"
+    configuration_password: false
+    configuration_prompt: "\(config\)#"
+    low_level_keys: "\x08" # Backspace (peut varier selon le modèle)
+    low_level_prompt: "rommon.*"
+
+Juniper: # Ajout d'une nouvelle marque
+  "EX[0-9]{3}": # Regex pour les EX2200, EX3300, EX4200, etc.
+    default_prompt: ">"
+    enable_command: "cli" # Pour passer en mode CLI
+    enable_password: false
+    enable_prompt: "#"
+    configuration_command: "configure"
+    configuration_password: false
+    configuration_prompt: "\[edit\]#"
+    low_level_keys: "\x03" # Ctrl+C
+    low_level_prompt: "loader>"
+
+Arista: # Ajout d'une nouvelle marque
+  "7[0-9]{4}": # Regex pour les 7050, 7150, etc.
+    default_prompt: ">"
+    enable_command: "enable"
+    enable_password: false
+    enable_prompt: "#"
+    configuration_command: "configure terminal"
+    configuration_password: false
+    configuration_prompt: "\(config\)#"
+    low_level_keys: "\x03" # Ctrl+C
+    low_level_prompt: "boot>"
