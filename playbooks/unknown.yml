@@ -1,0 +1,38 @@
+[
+  {
+    "Materiel": {
+      "Items": [
+        { "Champ": "Numéro de série", "Required": true },
+        { "Champ": "Adresse MAC Ethernet", "Required": true },
+        { "Champ": "Adresse MAC Wifi", "Required": true },
+        { "Champ": "Hostname", "Required": true },
+        { "Champ": "Processeur", "Required": true },
+        { "Champ": "Mémoire RAM", "Required": true }
+      ]
+    },
+  }
+  {}
+    "Action": {
+      "Items": [
+        { "Champ": "Masterisé", "Required": true, "DateRequired": true },
+        { "Champ": "Configuré", "Required": true, "DateRequired": true },
+        { "Champ": "Mis à jour", "Required": true, "DateRequired": true },
+        { "Champ": "Diagnostiqué", "Required": true, "DateRequired": false },
+        { "Champ": "Réparé", "Required": true, "DateRequired": true },
+        { "Champ": "Testé", "Required": true, "DateRequired": true },
+        { "Champ": "Blanchi", "Required": true, "DateRequired": false },
+        { "Champ": "Nettoyé", "Required": true, "DateRequired": false }
+      ]
+    },
+    "Colisage": {
+      "Items": [
+        { "Champ": "Accessoires", "Required": true },
+        { "Champ": "Carton", "Required": true },
+        { "Champ": "Etiquette", "Required": true },
+        { "Champ": "SN", "Required": true },
+        { "Champ": "Ref", "Required": true },
+        { "Champ": "Asset", "Required": true }
+      ]
+    }
+
+]
